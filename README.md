@@ -1,7 +1,7 @@
 # Reto
 Automatización en pet store
 
-ID: “PFA_01_QAN”
+ID: “PFA_02_QAN”
 
 Comenzando 🚀 Estas instrucciones te permitirán conocer las tecnologias y herramientas utilizadas en la automatizacion.
 
