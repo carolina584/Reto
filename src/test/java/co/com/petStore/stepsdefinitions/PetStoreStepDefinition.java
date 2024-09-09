@@ -31,4 +31,20 @@ public class PetStoreStepDefinition {
     public void verifyProductIsAddedToTheCartDescription(String data) {
         pageUser.verifyProductIsAddedToTheCart(data);
     }
+
+    @When("search for (.*) product in cart")
+    public void searchForNameProductInCart(String name) {
+        pageUser.searchProduct(name);
+    }
+
+    @And("add the shopping cart and delete")
+    public void addTheShoppingCartAndDelete() {
+        pageUser.userAddTheShoppingCart();
+        pageUser.deleteProductCart();
+    }
+
+    @Then("verify message (.*)")
+    public void verifyMessageDescription(String data) {
+        pageUser.verifyDeleteProduct(data);
+    }
 }

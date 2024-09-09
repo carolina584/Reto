@@ -6,7 +6,6 @@ import co.com.petStore.pageobjects.ProductListDetailPage;
 import co.com.petStore.pageobjects.ShoppingCartPage;
 import net.thucydides.core.annotations.Step;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 public class PetStoreUserStep {
 
@@ -34,6 +33,17 @@ public class PetStoreUserStep {
     @Step("verify product is added to the cart")
     public void verifyProductIsAddedToTheCart(String data) {
         String textCurrent = userShopping.verifyNameProduct();
+        assertEquals("Product text doesn't match what you expect", textCurrent, data);
+    }
+
+    @Step("Delete product in cart shopping")
+    public void deleteProductCart(){
+        user.deleteProduct();
+    }
+
+    @Step("verify delete product in cart shopping")
+    public void verifyDeleteProduct(String data) {
+        String textCurrent = userShopping.verifyCartEmpty();
         assertEquals("Product text doesn't match what you expect", textCurrent, data);
     }
 }
